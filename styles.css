@@ -1,0 +1,106 @@
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6a0572, #1e024e); /* Modern gradient purple */
+    color: white;
+    perspective: 1000px;
+}
+
+/* Main Container */
+.main-container {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+/* Logo Styles */
+.logo {
+    width: 100px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: spin-coin 5s infinite ease-in-out, glow 2s infinite alternate;
+    transform-origin: center;
+}
+
+/* Keyframes for vertical coin spin */
+@keyframes spin-coin {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+/* Main Heading */
+.main-heading {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Sub Heading */
+.sub-heading {
+    font-size: 1.5rem;
+    margin: 10px 0 20px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Voiceflow Chat Container */
+.chat-container {
+    width: 100%;
+    max-width: 400px;
+    height: 600px;
+    background: #c27edb;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(194, 126, 219, 0.5);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Particle Background */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    animation: move 5s linear infinite;
+}
+
+/* Particle Movement Keyframes */
+@keyframes move {
+    from {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: translate(calc(200vw * var(--dx)), calc(200vh * var(--dy))) scale(0.5);
+        opacity: 0;
+    }
+}
