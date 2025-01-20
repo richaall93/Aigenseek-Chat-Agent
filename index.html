@@ -3,50 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aigenseek</title>
+    <title>Aigenseek Chatbot</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="main-container">
+        <!-- Logo -->
         <img src="images/Aigenseek New logo.png" alt="Aigenseek Logo" class="logo">
-        
+
         <!-- Header Section -->
         <h1 class="main-heading">Aigenseek</h1>
         <h2 class="sub-heading">Let's chat!</h2>
-        
-        <!-- Embedded Voiceflow Chat Container -->
-        <div id="vf-bot" class="chat-container"></div>
 
-        <!-- Particle Background -->
+        <!-- Voiceflow Chat Container -->
+        <div id="vf-chat"></div> <!-- Embedded Voiceflow chat -->
+
+        <!-- Particle Effect -->
         <div class="particles"></div>
     </div>
-
-    <!-- Custom Scripts -->
     <script src="script.js"></script>
-
-    <!-- Voiceflow Chat -->
-    <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", () => {
-            // Add Voiceflow bot to the container
-            const vfBotContainer = document.getElementById("vf-bot");
-
-            const script = document.createElement("script");
-            script.type = "text/javascript";
-            script.onload = function () {
-                window.voiceflow.chat.load({
-                    verify: { projectID: '67767c60295927a88b27bafc' },
-                    url: 'https://general-runtime.voiceflow.com',
-                    versionID: 'production',
-                    settings: {
-                        open: true, // Automatically open chatbox
-                        container: vfBotContainer, // Embed chat in #vf-bot
-                        disableWidget: true, // Completely disable the widget
-                    },
-                });
-            };
-            script.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
-            document.head.appendChild(script);
-        });
-    </script>
 </body>
 </html>
