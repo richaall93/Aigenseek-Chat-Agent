@@ -1,35 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Add Voiceflow bot to the container
     const vfChatContainer = document.getElementById("vf-chat");
-    let isChatInitialized = false;
 
-    function initializeChatbot() {
-        if (!isChatInitialized) {
-            const script = document.createElement("script");
-            script.type = "text/javascript";
-            script.onload = function () {
-                window.voiceflow.chat.load({
-                    verify: { projectID: '67767c60295927a88b27bafc' },
-                    url: 'https://general-runtime.voiceflow.com',
-                    versionID: 'production',
-                    settings: {
-                        open: true,
-                        container: vfChatContainer, // Embed directly into #vf-chat
-                    },
-                });
-                isChatInitialized = true;
-            };
-            script.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
-            document.head.appendChild(script);
-        }
-    }
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.onload = function () {
+        window.voiceflow.chat.load({
+            verify: { projectID: "67767c60295927a88b27bafc" }, // Replace with your actual project ID
+            url: "https://general-runtime.voiceflow.com",
+            versionID: "production",
+            render: {
+                mode: "embedded",
+                target: vfChatContainer, // Embed directly into #vf-chat
+            },
+            autostart: true, // Automatically start a new session
+        });
+    };
+    script.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
+    document.head.appendChild(script);
 
-    // Initialize chatbot
-    if (vfChatContainer) {
-        vfChatContainer.innerHTML = ""; // Clear any previous content
-        initializeChatbot();
-    }
-
-    // Particle Effect
+    // Particle Effect: Universe-like background
     const particlesContainer = document.querySelector('.particles');
 
     function createParticles(count) {
