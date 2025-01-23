@@ -55,9 +55,9 @@ body {
 }
 
 /* Voiceflow Chat Container */
-#vf-chat {
+#VG_OVERLAY_CONTAINER {
     width: 100%;
-    height: 700px;
+    height: 750px;
     max-width: 400px;
     background: #c27edb;
     border-radius: 20px;
